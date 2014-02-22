@@ -28,9 +28,8 @@
     
 	<div data-role="content" >	
 		
-		<form>
-  <img src="css/themes/images/toyota-logo.png" />   <label for="search-1">VIN Search</label>
-     <input name="search-1" id="search-1" value="" type="search">
+		<form id="searchform" name="searchform">
+  <img src="css/themes/images/toyota-logo.png" /> <input name="search-1" id="search-1" value="" type="search"><input type="button" id="search" name="search" value="Search VIN"><input type="button" id="scan" name="scan" value="Scan VIN">
 </form>
 <div style="text-align:center"></div><br>
         <ul data-role="listview" data-ajax="false" data-inset="true">
@@ -526,6 +525,16 @@
     
   
     
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="barcodescanner.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+
+
     
 </body>
 </html>
