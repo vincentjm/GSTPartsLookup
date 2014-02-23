@@ -23,25 +23,26 @@
 	<div data-role="header">
 		<h1>Toyota Accessory Search</h1>
 	</div><!-- /header -->
-    
-        
-    
+	
 	<div data-role="content" >	
-		
 		<form id="searchform" name="searchform">
-  <img src="css/themes/images/toyota-logo.png" /> <input name="search-1" id="search-1" value="" type="search"><input type="button" id="search" name="search" value="Search VIN"><input type="button" id="scan" name="scan" value="Scan VIN">
-</form>
-<div style="text-align:center"></div><br>
-        <ul data-role="listview" data-ajax="false" data-inset="true">
-    <li><a  href="#twelve">2012</a></li>
-    <li><a href="#thirteen">2013</a></li>
-    <li><a href="#fourteen">2014</a></li>
-</ul>
+			<img src="css/themes/images/toyota-logo.png" /> 
+			<input name="search-1" id="search-1" value="" type="search">
+			<input type="button" id="search" name="search" value="Search VIN" onClick="getdatabyform()">
+			<input type="button" id="scan" name="scan" value="Scan VIN">
+		</form>
+		<div style="text-align:center"></div><br>
+		<ul data-role="listview" data-ajax="false" data-inset="true">
+			<li><a href="#twelve">2012</a></li>
+			<li><a href="#thirteen">2013</a></li>
+			<li><a href="#fourteen">2014</a></li>
+		</ul>
 	</div><!-- /content -->
 	
 	<div data-role="footer" data-theme="a">
 		<h4>Hackathon 2014</h4>
 	</div><!-- /footer -->
+	
 </div><!-- /page one -->
 
 
@@ -55,136 +56,161 @@
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">	
-        				<div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div>
+    <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div>
 
-		<h2>2012</h2>
-		<ul data-role="listview" data-inset="true">
-    <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>4-Runner</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Avalon</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Camry</h2>
-    <p>2012</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Celica</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Corolla</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>FJ Cruiser</h2>
-    <p>2012</p></a>
-    </li>
-        <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Highlander</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Land Cruiser</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Matrix</h2>
-    <p>2012</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>MR-2S</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Prius</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Prius C</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Prius Plug In</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Prius V</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Rav-4</h2>
-    <p>2012</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Rav-4 EV</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Sequoia</h2>
-    <p>2012</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Sienna</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Solara</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tacoma 2W</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tacoma 4W</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tundra 2W</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tundra 4W</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Venza</h2>
-    <p>2012</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Yaris</h2>
-    <p>2012</p></a>
-    </li>
-</ul>
+	<h2>2012</h2>
+	<ul data-role="listview" data-inset="true">
+		<li>
+			<a href="#" onClick="getdata('2012','4-RUNNER')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>4-Runner</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','AVALON')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Avalon</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','CAMRY')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Camry</h2>
+			<p>2012</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2012','CELICA')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Celica</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','COROLLA')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Corolla</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','FJ CRUISER')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>FJ Cruiser</h2>
+			<p>2012</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2012','HIGHLANDER')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Highlander</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','LAND CRUISER')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Land Cruiser</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','MATRIX')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Matrix</h2>
+			<p>2012</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2012','MR-2S')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>MR-2S</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','PRIUS')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Prius</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','PRIUS C')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Prius C</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','PRIUS PLUG IN')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Prius Plug In</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','PRIUS V')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Prius V</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','RAV-4')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Rav-4</h2>
+			<p>2012</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2012','RAV-4 EV')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Rav-4 EV</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','SEQUOIA')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Sequoia</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','SIENNA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Sienna</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','SOLARA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Solara</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','TACOMA 2W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tacoma 2W</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','TACOMA 4W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tacoma 4W</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','TUNDRA 2W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tundra 2W</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','TUNDRA 4W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tundra 4W</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','VENZA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Venza</h2>
+			<p>2012</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2012','YARIS')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Yaris</h2>
+			<p>2012</p></a>
+		</li>
+	</ul>
 		
 	</div><!-- /content -->
 	
@@ -197,142 +223,166 @@
 <div data-role="page" id="thirteen" data-theme="a">
 
 	<div data-role="header">
-                	<a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</a>
+		<a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</a>
 
 		<h1>Toyota Accessory Search</h1>
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">
-        				<div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br>
-
+        <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br>
 		<h2>2013</h2>
 		<ul data-role="listview" data-inset="true">
-   <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>4-Runner</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Avalon</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Camry</h2>
-    <p>2013</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Celica</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Corolla</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>FJ Cruiser</h2>
-    <p>2013</p></a>
-    </li>
-        <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Highlander</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Land Cruiser</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Matrix</h2>
-    <p>2013</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>MR-2S</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Prius</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Prius C</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Prius Plug In</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Prius V</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Rav-4</h2>
-    <p>2013</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Rav-4 EV</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Sequoia</h2>
-    <p>2013</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Sienna</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Solara</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tacoma 2W</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tacoma 4W</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tundra 2W</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tundra 4W</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Venza</h2>
-    <p>2013</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Yaris</h2>
-    <p>2013</p></a>
-    </li>
-</ul>
+		<li>
+			<a href="#" onClick="getdata('2013','4-RUNNER')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>4-Runner</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','AVALON')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Avalon</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','CAMRY')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Camry</h2>
+			<p>2013</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2013','CELICA')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Celica</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','COROLLA')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Corolla</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','FJ CRUISER')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>FJ Cruiser</h2>
+			<p>2013</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2013','HIGHLANDER')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Highlander</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','LAND CRUISER')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Land Cruiser</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','MATRIX')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Matrix</h2>
+			<p>2013</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2013','MR-2S')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>MR-2S</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','PRIUS')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Prius</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','PRIUS C')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Prius C</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','PRIUS PLUG IN')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Prius Plug In</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','PRIUS V')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Prius V</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','RAV-4')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Rav-4</h2>
+			<p>2013</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2013','RAV-4 EV')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Rav-4 EV</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','SEQUOIA')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Sequoia</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','SIENNA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Sienna</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','SOLARA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Solara</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','TACOMA 2W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tacoma 2W</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','TACOMA 4W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tacoma 4W</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','TUNDRA 2W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tundra 2W</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','TUNDRA 4W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tundra 4W</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','VENZA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Venza</h2>
+			<p>2013</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2013','YARIS')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Yaris</h2>
+			<p>2013</p></a>
+		</li>
+	</ul>
 		
 	</div><!-- /content -->
 	
@@ -345,142 +395,165 @@
 <div data-role="page" id="fourteen" data-theme="a">
 
 	<div data-role="header">
-                	<a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</a>
-
+		<a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</a>
 		<h1>Toyota Accessory Search</h1>
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">	
-        				<div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br>
-
+        <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br>
 		<h2>2014</h2>
 		<ul data-role="listview" data-inset="true">
-    <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>4-Runner</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Avalon</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Camry</h2>
-    <p>2014</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Celica</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Corolla</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>FJ Cruiser</h2>
-    <p>2014</p></a>
-    </li>
-        <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Highlander</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Land Cruiser</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Matrix</h2>
-    <p>2014</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>MR-2S</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Prius</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Prius C</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#detail">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Prius Plug In</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Prius V</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Rav-4</h2>
-    <p>2014</p></a>
-    </li>
-               <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Rav-4 EV</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Sequoia</h2>
-    <p>2014</p></a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Sienna</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Solara</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tacoma 2W</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tacoma 4W</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tundra 2W</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Tundra 4W</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Venza</h2>
-    <p>2014</p></a>
-    </li>
-     <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Yaris</h2>
-    <p>2014</p></a>
-    </li>
-</ul>
+		<li>
+			<a href="#" onClick="getdata('2014','4-RUNNER')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>4-Runner</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','AVALON')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Avalon</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','CAMRY')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Camry</h2>
+			<p>2014</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2014','CELICA')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Celica</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','COROLLA')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Corolla</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','FJ CRUISER')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>FJ Cruiser</h2>
+			<p>2014</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2014','HIGHLANDER')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Highlander</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','LAND CRUISER')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Land Cruiser</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','MATRIX')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Matrix</h2>
+			<p>2014</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2014','MR-2S')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>MR-2S</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','PRIUS')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Prius</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','PRIUS C')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Prius C</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','PRIUS PLUG IN')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Prius Plug In</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','PRIUS V')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Prius V</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','RAV-4')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Rav-4</h2>
+			<p>2014</p></a>
+		</li>
+        <li>
+			<a href="#" onClick="getdata('2014','RAV-4 EV')">
+			<img src="_assets/img/album-bb.jpg">
+			<h2>Rav-4 EV</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','SEQUOIA')">
+			<img src="_assets/img/album-hc.jpg">
+			<h2>Sequoia</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','SIENNA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Sienna</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','SOLARA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Solara</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','TACOMA 2W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tacoma 2W</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','TACOMA 4W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tacoma 4W</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','TUNDRA 2W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tundra 2W</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','TUNDRA 4W')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Tundra 4W</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','VENZA')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Venza</h2>
+			<p>2014</p></a>
+		</li>
+		<li>
+			<a href="#" onClick="getdata('2014','YARIS')">
+			<img src="_assets/img/album-p.jpg">
+			<h2>Yaris</h2>
+			<p>2014</p></a>
+		</li>
+	</ul>
 		
 	</div><!-- /content -->
 	
@@ -494,47 +567,29 @@
 <div data-role="page" id="detail" data-theme="a">
 
 	<div data-role="header">
-                	<a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</a>
-
+        <a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</a>
 		<h1>Toyota Accessory Search</h1>
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">	
-		<h2>Tundra<span> 2014</span></h2>
-		 <div data-role="collapsible" data-collapsed="true">
-             <h4>Interior</h4>
-            <p>put data here</p>
-</div>
- <div data-role="collapsible" data-collapsed="true">
-             <h4>Exterior</h4>
-            <p>put data here</p>
-</div>
-         <div data-role="collapsible" data-collapsed="true">
-             <h4>Audio</h4>
-            <p>put data here</p>
-</div>
-
-		
-	</div><!-- /content -->
+		<h2>
+			<div id="vin">
+			</div>
+			<div id="yearmodel">
+			</div>
+		</h2>
+		<div data-role="collapsible-set" id="partlist"></div>
+	</div>
 	
 	<div data-role="footer">
 		<h4>Hackathon 2014</h4>
 	</div><!-- /footer -->
 </div><!-- /page three -->    
-
-    
-  
-    
-
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
-
-
-
-    
 </body>
 </html>

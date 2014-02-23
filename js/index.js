@@ -60,3 +60,74 @@ var app = {
 
 
 };
+
+
+function getdatabyform(){
+var txt = document.getElementById("search-1").value;
+var url = "http://172.16.103.89:99/PartsLookupSvc.Lookup.svc/"+txt+"?callback=?";
+$.getJSON( url, function( data ) {
+	$("body").pagecontainer("change", "#detail", {});
+	$("#vin").html(data.Vin);
+	$("#yearmodel").html(data.ModelYear + " " + data.Model);
+	var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+	carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+	extlist = jsontolist(data,"EXTERIOR");
+	fleetlist = jsontolist(data,"FLEET");
+	intlist = jsontolist(data,"INTERIOR");
+	protlist = jsontolist(data,"PROTECTION");
+	speclist = jsontolist(data,"SPECIAL EDITION");
+	techlist = jsontolist(data,"TECHNOLOGY");
+	wheellist = jsontolist(data,"WHEELS");
+	partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+	$("#partlist").html(partlist);
+	$('#partlist').collapsibleset('refresh');
+});
+}
+
+function getdata(year, model){
+var url = "http://172.16.103.89:99/PartsLookupSvc.Lookup.svc/"+year+"/"+model+"?callback=?";
+$.getJSON( url, function( data ) {
+	$("body").pagecontainer("change", "#detail", {});
+	$("#yearmodel").html(data.ModelYear + " " + data.Model);
+	var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+	carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+	extlist = jsontolist(data,"EXTERIOR");
+	fleetlist = jsontolist(data,"FLEET");
+	intlist = jsontolist(data,"INTERIOR");
+	protlist = jsontolist(data,"PROTECTION");
+	speclist = jsontolist(data,"SPECIAL EDITION");
+	techlist = jsontolist(data,"TECHNOLOGY");
+	wheellist = jsontolist(data,"WHEELS");
+	partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+	$("#partlist").html(partlist);
+	$('#partlist').collapsibleset('refresh');
+});
+}
+
+function jsontolist(data, cat){
+	var gotone = false;
+	var list = "<div data-role=\"collapsible\">";
+	list += "<h4>"+cat+"</h4>";
+	$.each( data.ParentPart, function( index, value ){
+		if(value.Category == cat)
+		{
+			gotone = true;
+			list += "<div data-role=\"collapsible\">";
+			list += "<h4>" + $.trim(value.PartNumber) + " - " + $.trim(value.PartName) + "</h4>";
+			//list += "<p>" + $.trim(value.PartNumber) + " - " + $.trim(value.PartName) + "</p>";
+			if(value.ChildPart != null)
+			{
+				$.each( value.ChildPart, function( index2, value2 ){
+					//list += "<div data-role=\"collapsible\">";
+					//list += "<h4>" + $.trim(value2.PartNumber) + " - " + $.trim(value2.PartName) + "</h4>";
+					list += "<p>" + $.trim(value2.PartNumber) + " - " + $.trim(value2.PartName) + "</p>";
+				});
+			}
+			list += "</div>";
+		}
+	});
+	list += "</div>";
+	if(!gotone)
+		list = "";
+	return list;
+}
