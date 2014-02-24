@@ -31,15 +31,15 @@ var app = {
 
     scan: function() {
         console.log('scanning');
-        
+
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-        scanner.scan( function (result) { 
+        scanner.scan( function (result) {
 
-            alert("We got a barcode\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
+            alert("We got a barcode\n" +
+            "Result: " + result.text + "\n" +
+            "Format: " + result.format + "\n" +
+            "Cancelled: " + result.cancelled);
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
@@ -53,8 +53,8 @@ var app = {
             }
             */
 
-        }, function (error) { 
-            console.log("Scanning failed: ", error); 
+        }, function (error) {
+            console.log("Scanning failed: ", error);
         } );
     }
 
@@ -64,7 +64,7 @@ var app = {
 
 function getdatabyform(){
 var txt = document.getElementById("search-1").value;
-var url = "http://172.16.103.89:99/PartsLookupSvc.Lookup.svc/"+txt+"?callback=?";
+var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
 $.getJSON( url, function( data ) {
 	$("body").pagecontainer("change", "#detail", {});
 	$("#vin").html(data.Vin);
@@ -85,7 +85,7 @@ $.getJSON( url, function( data ) {
 }
 
 function getdata(year, model){
-var url = "http://172.16.103.89:99/PartsLookupSvc.Lookup.svc/"+year+"/"+model+"?callback=?";
+var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+year+"/"+model+"?callback=?";
 $.getJSON( url, function( data ) {
 	$("body").pagecontainer("change", "#detail", {});
 	$("#yearmodel").html(data.ModelYear + " " + data.Model);
