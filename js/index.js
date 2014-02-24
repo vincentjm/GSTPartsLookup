@@ -64,7 +64,7 @@ var app = {
 
 function getdatabyform(){
 var txt = document.getElementById("search-1").value;
-var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
+var url = "https://ffmobilestage.fitsvcs.com/Lookup.svc/"+txt+"?callback=?";
 $.getJSON( url, function( data ) {
 	$("body").pagecontainer("change", "#detail", {});
 	$("#vin").html(data.Vin);
@@ -85,7 +85,7 @@ $.getJSON( url, function( data ) {
 }
 
 function getdata(year, model){
-var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+year+"/"+model+"?callback=?";
+var url = "https://ffmobilestage.fitsvcs.com/Lookup.svc/"+year+"/"+model+"?callback=?";
 $.getJSON( url, function( data ) {
 	$("body").pagecontainer("change", "#detail", {});
 	$("#yearmodel").html(data.ModelYear + " " + data.Model);
