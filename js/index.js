@@ -57,47 +57,107 @@ var app = {
 
 };
 
+$( document ).ready(function() {
+	$('#search').click(function() {
+		getdatabyform();
+	});
+	
+	$.ajaxSetup({
+		timeout: 2*1000
+	});
+});
 
 function getdatabyform(){
-var txt = document.getElementById("search-1").value;
-var url = "https://ffmobilestage.fitsvcs.com/Lookup.svc/"+txt+"?callback=?";
-$.getJSON( url, function( data ) {
-	$("body").pagecontainer("change", "#detail", {});
-	$("#vin").html(data.Vin);
-	$("#yearmodel").html(data.ModelYear + " " + data.Model);
-	var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
-	carpetlist = jsontolist(data,"CARPET FLOOR MATS");
-	extlist = jsontolist(data,"EXTERIOR");
-	fleetlist = jsontolist(data,"FLEET");
-	intlist = jsontolist(data,"INTERIOR");
-	protlist = jsontolist(data,"PROTECTION");
-	speclist = jsontolist(data,"SPECIAL EDITION");
-	techlist = jsontolist(data,"TECHNOLOGY");
-	wheellist = jsontolist(data,"WHEELS");
-	partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
-	$("#partlist").html(partlist);
-	$('#partlist').collapsibleset('refresh');
-});
+	$("body").addClass('ui-disabled');
+	setTimeout(function(){
+        $.mobile.loading("show",{
+			text: "Loading...",
+			textVisible: true
+		});
+    }, 1);
+	
+	var txt = $("#search-1").val();
+	var url = "http://a1enm5p05:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
+	
+	$.jsonp({
+        url: url,
+        dataType: "jsonp",
+        timeout: 3000,
+        success: function (data, status) {
+            $("body").pagecontainer("change", "#detail", {});
+			$("#vin").html(data.Vin);
+			$("#yearmodel").html(data.ModelYear + " " + data.Model);
+			var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+			carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+			extlist = jsontolist(data,"EXTERIOR");
+			fleetlist = jsontolist(data,"FLEET");
+			intlist = jsontolist(data,"INTERIOR");
+			protlist = jsontolist(data,"PROTECTION");
+			speclist = jsontolist(data,"SPECIAL EDITION");
+			techlist = jsontolist(data,"TECHNOLOGY");
+			wheellist = jsontolist(data,"WHEELS");
+			partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+			$("#partlist").html(partlist);
+			$('#partlist').collapsibleset('refresh');
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
+        },
+        error: function (XHR, textStatus, errorThrown) {
+            alert("Error getting data");
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
+        }
+    });
 }
 
 function getdata(year, model){
-var url = "https://ffmobilestage.fitsvcs.com/Lookup.svc/"+year+"/"+model+"?callback=?";
-$.getJSON( url, function( data ) {
-	$("body").pagecontainer("change", "#detail", {});
-	$("#yearmodel").html(data.ModelYear + " " + data.Model);
-	var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
-	carpetlist = jsontolist(data,"CARPET FLOOR MATS");
-	extlist = jsontolist(data,"EXTERIOR");
-	fleetlist = jsontolist(data,"FLEET");
-	intlist = jsontolist(data,"INTERIOR");
-	protlist = jsontolist(data,"PROTECTION");
-	speclist = jsontolist(data,"SPECIAL EDITION");
-	techlist = jsontolist(data,"TECHNOLOGY");
-	wheellist = jsontolist(data,"WHEELS");
-	partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
-	$("#partlist").html(partlist);
-	$('#partlist').collapsibleset('refresh');
-});
+	$("body").addClass('ui-disabled');
+	setTimeout(function(){
+        $.mobile.loading("show",{
+			text: "Loading...",
+			textVisible: true
+		});
+    }, 1);
+	
+	var txt = $("#search-1").val();
+	var url = "http://a1enm5p05:8081/PSvc/Lookup.svc/"+year+"/"+model+"?callback=?";
+	
+	$.jsonp({
+        url: url,
+        dataType: "jsonp",
+        timeout: 3000,
+        success: function (data, status) {
+            $("body").pagecontainer("change", "#detail", {});
+			$("#yearmodel").html(data.ModelYear + " " + data.Model);
+			var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+			carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+			extlist = jsontolist(data,"EXTERIOR");
+			fleetlist = jsontolist(data,"FLEET");
+			intlist = jsontolist(data,"INTERIOR");
+			protlist = jsontolist(data,"PROTECTION");
+			speclist = jsontolist(data,"SPECIAL EDITION");
+			techlist = jsontolist(data,"TECHNOLOGY");
+			wheellist = jsontolist(data,"WHEELS");
+			partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+			$("#partlist").html(partlist);
+			$('#partlist').collapsibleset('refresh');
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
+        },
+        error: function (XHR, textStatus, errorThrown) {
+            alert("Error getting data");
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
+        }
+    });
 }
 
 function jsontolist(data, cat){

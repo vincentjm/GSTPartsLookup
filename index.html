@@ -8,9 +8,10 @@
 
     <link rel="stylesheet" href="css/themes/lio.css" />
     <link rel="stylesheet" href="css/themes/icon.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0.min.css" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+	<script src="js/jquery.jsonp-2.4.0.min.js"></script>
 
 </head>
 
@@ -25,12 +26,12 @@
         </div><!-- /header -->
 
         <div data-role="content">
-            <form id="searchform" name="searchform">
+            <!--form id="searchform" name="searchform"-->
                 <img src="css/themes/images/toyota-logo.png" />
                 <input name="search-1" id="search-1" value="" type="search">
-                <input type="button" id="search" name="search" value="Search VIN" onclick="getdatabyform()">
+                <input type="button" id="search" name="search" value="Search VIN">
                 <input type="button" id="scan" name="scan" value="Scan VIN">
-            </form>
+            <!--/form-->
             <div style="text-align:center"></div><br>
             <ul data-role="listview" data-ajax="false" data-inset="true">
                 <li><a href="#twelve">2012</a></li>
