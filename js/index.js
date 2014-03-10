@@ -61,7 +61,7 @@ $( document ).ready(function() {
 	$('#search').click(function() {
 		getdatabyform();
 	});
-	
+
 	$.ajaxSetup({
 		timeout: 2*1000
 	});
@@ -75,10 +75,10 @@ function getdatabyform(){
 			textVisible: true
 		});
     }, 1);
-	
+
 	var txt = $("#search-1").val();
-	var url = "http://a1enm5p05:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
-	
+	var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
+
 	$.jsonp({
         url: url,
         dataType: "jsonp",
@@ -122,10 +122,10 @@ function getdata(year, model){
 			textVisible: true
 		});
     }, 1);
-	
+
 	var txt = $("#search-1").val();
-	var url = "http://a1enm5p05:8081/PSvc/Lookup.svc/"+year+"/"+model+"?callback=?";
-	
+	var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+year+"/"+model+"?callback=?";
+
 	$.jsonp({
         url: url,
         dataType: "jsonp",
