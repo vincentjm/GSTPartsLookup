@@ -76,50 +76,72 @@ $( document ).ready(function() {
 });
 
 function getdatabyform(){
-//	$("body").addClass('ui-disabled');
-	setTimeout(function(){
-        $.mobile.loading("show",{
-			text: "Loading...",
-			textVisible: true
-		});
-    }, 1);
-
 	var txt = $("#search-1").val();
 	var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
-
-	$.jsonp({
-        url: url,
-        dataType: "jsonp",
-        timeout: 3000,
-        success: function (data, status) {
-            $("body").pagecontainer("change", "#detail", {});
-			$("#vin").html(data.Vin);
-			$("#yearmodel").html(data.ModelYear + " " + data.Model);
-			var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
-			carpetlist = jsontolist(data,"CARPET FLOOR MATS");
-			extlist = jsontolist(data,"EXTERIOR");
-			fleetlist = jsontolist(data,"FLEET");
-			intlist = jsontolist(data,"INTERIOR");
-			protlist = jsontolist(data,"PROTECTION");
-			speclist = jsontolist(data,"SPECIAL EDITION");
-			techlist = jsontolist(data,"TECHNOLOGY");
-			wheellist = jsontolist(data,"WHEELS");
-			partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
-			$("#partlist").html(partlist);
-			$('#partlist').collapsibleset('refresh');
-			setTimeout(function(){
-				$.mobile.loading("hide");
-			}, 1);
-//			$("body").removeClass('ui-disabled');
-        },
-        error: function (XHR, textStatus, errorThrown) {
-            alert("Error getting data");
-			setTimeout(function(){
-				$.mobile.loading("hide");
-			}, 1);
-//			$("body").removeClass('ui-disabled');
-        }
-    });
+	if (txt == "")
+		alert("Please enter a VIN");
+	else
+	{
+		//show the loading image
+		//	$("body").addClass('ui-disabled');
+		setTimeout(function(){
+			$.mobile.loading("show",{
+				text: "Loading...",
+				textVisible: true
+			});
+		}, 1);
+		//call service to get data for vin
+		$.jsonp({
+			url: url,
+			dataType: "jsonp",
+			timeout: 3000,
+			success: function (data, status) {
+				if(data[0] != null)
+				{
+					setTimeout(function(){
+						$.mobile.loading("hide");
+					}, 1);
+					alert("Unable to find VIN");
+				}
+				else if(data.ParentPart == "")
+				{
+					setTimeout(function(){
+						$.mobile.loading("hide");
+					}, 1);
+					alert("Unable to find parts for VIN");
+				}
+				else
+				{
+					$("body").pagecontainer("change", "#detail", {});
+					$("#vin").html(data.Vin);
+					$("#yearmodel").html(data.ModelYear + " " + data.Model);
+					var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+					carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+					extlist = jsontolist(data,"EXTERIOR");
+					fleetlist = jsontolist(data,"FLEET");
+					intlist = jsontolist(data,"INTERIOR");
+					protlist = jsontolist(data,"PROTECTION");
+					speclist = jsontolist(data,"SPECIAL EDITION");
+					techlist = jsontolist(data,"TECHNOLOGY");
+					wheellist = jsontolist(data,"WHEELS");
+					partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+					$("#partlist").html(partlist);
+					$('#partlist').collapsibleset('refresh');
+					setTimeout(function(){
+						$.mobile.loading("hide");
+					}, 1);
+		//			$("body").removeClass('ui-disabled');
+				}
+			},
+			error: function (XHR, textStatus, errorThrown) {
+				alert("Error getting parts data");
+				setTimeout(function(){
+					$.mobile.loading("hide");
+				}, 1);
+	//			$("body").removeClass('ui-disabled');
+			}
+		});
+	}
 }
 
 function getdata(year, model){
@@ -159,7 +181,7 @@ function getdata(year, model){
 //			$("body").removeClass('ui-disabled');
         },
         error: function (XHR, textStatus, errorThrown) {
-            alert("Error getting data");
+            alert("Error getting parts data");
             setTimeout(function () {
 				$.mobile.loading("hide");
 			}, 1);
