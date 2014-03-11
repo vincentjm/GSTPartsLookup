@@ -41,8 +41,16 @@ var app = {
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
-            document.getElementById("search-1").value = result.text;
-            console.log(result);
+
+                var vin = "";
+
+                if (result.text.length > 17)
+                {
+					vin = result.text.substr(result.text.length-17, 17);
+				}
+            document.getElementById("search-1").value = vin;
+            console.log(vin);
+            getdatabyform();
             /*
             if (args.format == "QR_CODE") {
                 window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
