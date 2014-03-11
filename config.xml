@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.GSTPartsLookup"
-        version   = "2.0.0">
+        id        = "com.friedkin.GSTPartsLookup"
+        version   = "1.0.0">
     <name>GST Parts Lookup</name>
 
     <description>
