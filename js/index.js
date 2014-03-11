@@ -42,7 +42,7 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
 
-                var vin = "";
+                var vin = result.text;
 
                 if (result.text.length > 17)
                 {
