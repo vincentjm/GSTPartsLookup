@@ -68,7 +68,7 @@ $( document ).ready(function() {
 });
 
 function getdatabyform(){
-	$("body").addClass('ui-disabled');
+//	$("body").addClass('ui-disabled');
 	setTimeout(function(){
         $.mobile.loading("show",{
 			text: "Loading...",
@@ -102,20 +102,20 @@ function getdatabyform(){
 			setTimeout(function(){
 				$.mobile.loading("hide");
 			}, 1);
-			$("body").removeClass('ui-disabled');
+//			$("body").removeClass('ui-disabled');
         },
         error: function (XHR, textStatus, errorThrown) {
             alert("Error getting data");
 			setTimeout(function(){
 				$.mobile.loading("hide");
 			}, 1);
-			$("body").removeClass('ui-disabled');
+//			$("body").removeClass('ui-disabled');
         }
     });
 }
 
 function getdata(year, model){
-	$("body").addClass('ui-disabled');
+//	$("body").addClass('ui-disabled');
 	setTimeout(function(){
         $.mobile.loading("show",{
 			text: "Loading...",
@@ -148,14 +148,14 @@ function getdata(year, model){
 			setTimeout(function(){
 				$.mobile.loading("hide");
 			}, 1);
-			$("body").removeClass('ui-disabled');
+//			$("body").removeClass('ui-disabled');
         },
         error: function (XHR, textStatus, errorThrown) {
             alert("Error getting data");
 			setTimeout(function(){
 				$.mobile.loading("hide");
 			}, 1);
-			$("body").removeClass('ui-disabled');
+//			$("body").removeClass('ui-disabled');
         }
     });
 }
