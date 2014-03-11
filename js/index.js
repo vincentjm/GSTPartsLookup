@@ -151,8 +151,8 @@ function getdata(year, model){
 //			$("body").removeClass('ui-disabled');
         },
         error: function (XHR, textStatus, errorThrown) {
-            navigator.notification.alert('Connection error', null, 'Error', 'Ok');
-			setTimeout(function(){
+            alert("Error getting data");
+            setTimeout(function () {
 				$.mobile.loading("hide");
 			}, 1);
 //			$("body").removeClass('ui-disabled');
