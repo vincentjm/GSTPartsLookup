@@ -18,29 +18,29 @@
  */
 var app = {
     // Application Constructor
-    initialize: function () {
+    initialize: function() {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // `load`, `deviceready`, `offline`, and `online`.
-    bindEvents: function () {
+    bindEvents: function() {
         document.getElementById('scan').addEventListener('click', this.scan, false);
     },
 
-    scan: function () {
+    scan: function() {
         console.log('scanning');
 
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-        scanner.scan(function (result) {
+        scanner.scan( function (result) {
 
 
-            console.log("Scanner result: \n" +
-                 "text: " + result.text + "\n" +
-                 "format: " + result.format + "\n" +
-                 "cancelled: " + result.cancelled + "\n");
+           console.log("Scanner result: \n" +
+                "text: " + result.text + "\n" +
+                "format: " + result.format + "\n" +
+                "cancelled: " + result.cancelled + "\n");
             document.getElementById("search-1").value = result.text;
             console.log(result);
             /*
@@ -51,148 +51,139 @@ var app = {
 
         }, function (error) {
             console.log("Scanning failed: ", error);
-        });
+        } );
     }
 
 
 };
 
-$(document).ready(function () {
-    $('#search').click(function () {
-        getdatabyform();
-    });
+$( document ).ready(function() {
+	$('#search').click(function() {
+		getdatabyform();
+	});
 
-    $.ajaxSetup({
-        timeout: 2 * 1000
-    });
+	$.ajaxSetup({
+		timeout: 2*1000
+	});
 });
 
-// Show a custom alert    
-//    
-function showAlert() {
-    navigator.notification.alert(
-        'Connection failed!',         // message            
-        alertDismissed,                // callback            
-        'Error',                   // title            
-        'Done'                         // buttonName        
-        );
-}
-
-function getdatabyform() {
-    $("body").addClass('ui-disabled');
-    setTimeout(function () {
-        $.mobile.loading("show", {
-            text: "Loading...",
-            textVisible: true
-        });
+function getdatabyform(){
+	$("body").addClass('ui-disabled');
+	setTimeout(function(){
+        $.mobile.loading("show",{
+			text: "Loading...",
+			textVisible: true
+		});
     }, 1);
 
-    var txt = $("#search-1").val();
-    var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/" + txt + "?callback=?";
+	var txt = $("#search-1").val();
+	var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+txt+"?callback=?";
 
-    $.jsonp({
+	$.jsonp({
         url: url,
         dataType: "jsonp",
         timeout: 3000,
         success: function (data, status) {
             $("body").pagecontainer("change", "#detail", {});
-            $("#vin").html(data.Vin);
-            $("#yearmodel").html(data.ModelYear + " " + data.Model);
-            var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
-            carpetlist = jsontolist(data, "CARPET FLOOR MATS");
-            extlist = jsontolist(data, "EXTERIOR");
-            fleetlist = jsontolist(data, "FLEET");
-            intlist = jsontolist(data, "INTERIOR");
-            protlist = jsontolist(data, "PROTECTION");
-            speclist = jsontolist(data, "SPECIAL EDITION");
-            techlist = jsontolist(data, "TECHNOLOGY");
-            wheellist = jsontolist(data, "WHEELS");
-            partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
-            $("#partlist").html(partlist);
-            $('#partlist').collapsibleset('refresh');
-            setTimeout(function () {
-                $.mobile.loading("hide");
-            }, 1);
-            $("body").removeClass('ui-disabled');
+			$("#vin").html(data.Vin);
+			$("#yearmodel").html(data.ModelYear + " " + data.Model);
+			var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+			carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+			extlist = jsontolist(data,"EXTERIOR");
+			fleetlist = jsontolist(data,"FLEET");
+			intlist = jsontolist(data,"INTERIOR");
+			protlist = jsontolist(data,"PROTECTION");
+			speclist = jsontolist(data,"SPECIAL EDITION");
+			techlist = jsontolist(data,"TECHNOLOGY");
+			wheellist = jsontolist(data,"WHEELS");
+			partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+			$("#partlist").html(partlist);
+			$('#partlist').collapsibleset('refresh');
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
         },
         error: function (XHR, textStatus, errorThrown) {
-            showAlert();
-            setTimeout(function () {
-                $.mobile.loading("hide");
-            }, 1);
-            $("body").removeClass('ui-disabled');
+            alert("Error getting data");
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
         }
     });
 }
 
-function getdata(year, model) {
-    $("body").addClass('ui-disabled');
-    setTimeout(function () {
-        $.mobile.loading("show", {
-            text: "Loading...",
-            textVisible: true
-        });
+function getdata(year, model){
+	$("body").addClass('ui-disabled');
+	setTimeout(function(){
+        $.mobile.loading("show",{
+			text: "Loading...",
+			textVisible: true
+		});
     }, 1);
 
-    var txt = $("#search-1").val();
-    var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/" + year + "/" + model + "?callback=?";
+	var txt = $("#search-1").val();
+	var url = "http://a1enm5p05.fitsvcs.com:8081/PSvc/Lookup.svc/"+year+"/"+model+"?callback=?";
 
-    $.jsonp({
+	$.jsonp({
         url: url,
         dataType: "jsonp",
         timeout: 3000,
         success: function (data, status) {
             $("body").pagecontainer("change", "#detail", {});
-            $("#yearmodel").html(data.ModelYear + " " + data.Model);
-            var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
-            carpetlist = jsontolist(data, "CARPET FLOOR MATS");
-            extlist = jsontolist(data, "EXTERIOR");
-            fleetlist = jsontolist(data, "FLEET");
-            intlist = jsontolist(data, "INTERIOR");
-            protlist = jsontolist(data, "PROTECTION");
-            speclist = jsontolist(data, "SPECIAL EDITION");
-            techlist = jsontolist(data, "TECHNOLOGY");
-            wheellist = jsontolist(data, "WHEELS");
-            partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
-            $("#partlist").html(partlist);
-            $('#partlist').collapsibleset('refresh');
-            setTimeout(function () {
-                $.mobile.loading("hide");
-            }, 1);
-            $("body").removeClass('ui-disabled');
+			$("#yearmodel").html(data.ModelYear + " " + data.Model);
+			var carpetlist, extlist, fleetlist, intlist, protlist, speclist, techlist, wheellist, partlist;
+			carpetlist = jsontolist(data,"CARPET FLOOR MATS");
+			extlist = jsontolist(data,"EXTERIOR");
+			fleetlist = jsontolist(data,"FLEET");
+			intlist = jsontolist(data,"INTERIOR");
+			protlist = jsontolist(data,"PROTECTION");
+			speclist = jsontolist(data,"SPECIAL EDITION");
+			techlist = jsontolist(data,"TECHNOLOGY");
+			wheellist = jsontolist(data,"WHEELS");
+			partlist = carpetlist + extlist + fleetlist + intlist + protlist + speclist + techlist + wheellist;
+			$("#partlist").html(partlist);
+			$('#partlist').collapsibleset('refresh');
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
         },
         error: function (XHR, textStatus, errorThrown) {
-            showAlert();
-            setTimeout(function () {
-                $.mobile.loading("hide");
-            }, 1);
-            $("body").removeClass('ui-disabled');
+            alert("Error getting data");
+			setTimeout(function(){
+				$.mobile.loading("hide");
+			}, 1);
+			$("body").removeClass('ui-disabled');
         }
     });
 }
 
-function jsontolist(data, cat) {
-    var gotone = false;
-    var list = "<div data-role=\"collapsible\">";
-    list += "<h4>" + cat + "</h4>";
-    $.each(data.ParentPart, function (index, value) {
-        if (value.Category == cat) {
-            gotone = true;
-            list += "<div data-role=\"collapsible\">";
-            list += "<h4>" + $.trim(value.PartNumber) + " - " + $.trim(value.PartName) + "</h4>";
-            //list += "<p>" + $.trim(value.PartNumber) + " - " + $.trim(value.PartName) + "</p>";
-            if (value.ChildPart != null) {
-                $.each(value.ChildPart, function (index2, value2) {
-                    //list += "<div data-role=\"collapsible\">";
-                    //list += "<h4>" + $.trim(value2.PartNumber) + " - " + $.trim(value2.PartName) + "</h4>";
-                    list += "<p>" + $.trim(value2.PartNumber) + " - " + $.trim(value2.PartName) + "</p>";
-                });
-            }
-            list += "</div>";
-        }
-    });
-    list += "</div>";
-    if (!gotone)
-        list = "";
-    return list;
+function jsontolist(data, cat){
+	var gotone = false;
+	var list = "<div data-role=\"collapsible\">";
+	list += "<h4>"+cat+"</h4>";
+	$.each( data.ParentPart, function( index, value ){
+		if(value.Category == cat)
+		{
+			gotone = true;
+			list += "<div data-role=\"collapsible\">";
+			list += "<h4>" + $.trim(value.PartNumber) + " - " + $.trim(value.PartName) + "</h4>";
+			//list += "<p>" + $.trim(value.PartNumber) + " - " + $.trim(value.PartName) + "</p>";
+			if(value.ChildPart != null)
+			{
+				$.each( value.ChildPart, function( index2, value2 ){
+					//list += "<div data-role=\"collapsible\">";
+					//list += "<h4>" + $.trim(value2.PartNumber) + " - " + $.trim(value2.PartName) + "</h4>";
+					list += "<p>" + $.trim(value2.PartNumber) + " - " + $.trim(value2.PartName) + "</p>";
+				});
+			}
+			list += "</div>";
+		}
+	});
+	list += "</div>";
+	if(!gotone)
+		list = "";
+	return list;
 }
