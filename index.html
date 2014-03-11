@@ -27,7 +27,7 @@
 
         <div data-role="content">
             <!--form id="searchform" name="searchform"-->
-            <img src="css/themes/images/toyota-logo.png" />
+            <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br />
             <input name="search-1" id="search-1" value="" type="search">
             <input type="button" id="search" name="search" value="Search VIN">
             <input type="button" id="scan" name="scan" value="Scan VIN">
@@ -50,136 +50,172 @@
 
         <div data-role="header">
             <a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">Back</a>
-            <h1>Toyota Accessory Search</h1>
+            <h1>GST LIO/DIO Parts Lookup</h1>
         </div><!-- /header -->
 
         <div data-role="content" data-theme="a">
-            <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br>
             <h2>2014</h2>
-            <ul data-role="listview" data-inset="true">
+
+            <ul data-role="listview" data-inset="true" id="modellist">
                 <li>
                     <a href="#" onclick="getdata('2014','4-RUNNER')">
-                        <div style="float:left;">
-                            <img src="img/4runner-front.png" style="width: 100px;">
+                        <div class="modeldiv">
+                            <img src="img/4runner-front.png">
                         </div>
-                        <h2 style="padding-left: 30px; padding-top: 8px;">4-Runner</h2>
+                        <h2>4-Runner</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','AVALON')">
-                        <img src="img/avalon-front.png">
+                        <div class="modeldiv">
+                            <img src="img/avalon-front.png">
+                        </div>
                         <h2>Avalon</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','CAMRY')">
-                        <img src="img/camry-front.png">
+                        <div class="modeldiv">
+                            <img src="img/camry-front.png">
+                        </div>
                         <h2>Camry</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','COROLLA')">
-                        <img src="img/corolla-front.png">
+                        <div class="modeldiv">
+                            <img src="img/corolla-front.png">
+                        </div>
                         <h2>Corolla</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','FJ CRUISER')">
-                        <img src="img/fj-cruiser-front.png">
+                        <div class="modeldiv">
+                            <img src="img/fj-cruiser-front.png">
+                        </div>
                         <h2>FJ Cruiser</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','HIGHLANDER')">
-                        <img src="img/highlander-front.png">
+                        <div class="modeldiv">
+                            <img src="img/highlander-front.png">
+                        </div>
                         <h2>Highlander</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','LAND CRUISER')">
-                        <img src="img/landcruiser-front.png">
+                        <div class="modeldiv">
+                            <img src="img/landcruiser-front.png">
+                        </div>
                         <h2>Land Cruiser</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','PRIUS')">
-                        <img src="img/prius-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-front.png">
+                        </div>
                         <h2>Prius</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','PRIUS C')">
-                        <img src="img/prius-c-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-c-front.png">
+                        </div>
                         <h2>Prius C</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','PRIUS V')">
-                        <img src="img/prius-v-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-v-front.png">
+                        </div>
                         <h2>Prius V</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','RAV-4')">
-                        <img src="img/rav4-front.png">
+                        <div class="modeldiv">
+                            <img src="img/rav4-front.png">
+                        </div>
                         <h2>Rav-4</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','SEQUOIA')">
-                        <img src="img/sequoia-front.png">
+                        <div class="modeldiv">
+                            <img src="img/sequoia-front.png">
+                        </div>
                         <h2>Sequoia</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','SIENNA')">
-                        <img src="img/sienna-front.png">
+                        <div class="modeldiv">
+                            <img src="img/sienna-front.png">
+                        </div>
                         <h2>Sienna</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','TACOMA 2W')">
-                        <img src="img/tacoma-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tacoma-front.png">
+                        </div>
                         <h2>Tacoma 2W</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','TACOMA 4W')">
-                        <img src="img/tacoma-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tacoma-front.png">
+                        </div>
                         <h2>Tacoma 4W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','TUNDRA 2W')">
-                        <img src="img/tundra-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tundra-front.png">
+                        </div>
                         <h2>Tundra 2W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','TUNDRA 4W')">
-                        <img src="img/tundra-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tundra-front.png">
+                        </div>
                         <h2>Tundra 4W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','VENZA')">
-                        <img src="img/venza-front.png">
+                        <div class="modeldiv">
+                            <img src="img/venza-front.png">
+                        </div>
                         <h2>Venza</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2014','YARIS')">
-                        <img src="img/yaris-front.png">
+                        <div class="modeldiv">
+                            <img src="img/yaris-front.png">
+                        </div>
                         <h2>Yaris</h2>
                     </a>
                 </li>
@@ -197,134 +233,172 @@
         <div data-role="header">
             <a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">Back</a>
 
-            <h1>Toyota Accessory Search</h1>
+            <h1>GST LIO/DIO Parts Lookup</h1>
         </div><!-- /header -->
 
         <div data-role="content" data-theme="a">
-            <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div><br>
             <h2>2013</h2>
-            <ul data-role="listview" data-inset="true">
+
+            <ul data-role="listview" data-inset="true" id="modellist">
                 <li>
                     <a href="#" onclick="getdata('2013','4-RUNNER')">
-                        <img src="img/4runner-front.png">
+                        <div class="modeldiv">
+                            <img src="img/4runner-front.png">
+                        </div>
                         <h2>4-Runner</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','AVALON')">
-                        <img src="img/avalon-front.png">
+                        <div class="modeldiv">
+                            <img src="img/avalon-front.png">
+                        </div>
                         <h2>Avalon</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','CAMRY')">
-                        <img src="img/camry-front.png">
+                        <div class="modeldiv">
+                            <img src="img/camry-front.png">
+                        </div>
                         <h2>Camry</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','COROLLA')">
-                        <img src="img/corolla-front.png">
+                        <div class="modeldiv">
+                            <img src="img/corolla-front.png">
+                        </div>
                         <h2>Corolla</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','FJ CRUISER')">
-                        <img src="img/fj-cruiser-front.png">
+                        <div class="modeldiv">
+                            <img src="img/fj-cruiser-front.png">
+                        </div>
                         <h2>FJ Cruiser</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','HIGHLANDER')">
-                        <img src="img/highlander-front.png">
+                        <div class="modeldiv">
+                            <img src="img/highlander-front.png">
+                        </div>
                         <h2>Highlander</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','LAND CRUISER')">
-                        <img src="img/landcruiser-front.png">
+                        <div class="modeldiv">
+                            <img src="img/landcruiser-front.png">
+                        </div>
                         <h2>Land Cruiser</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','PRIUS')">
-                        <img src="img/prius-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-front.png">
+                        </div>
                         <h2>Prius</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','PRIUS C')">
-                        <img src="img/prius-c-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-c-front.png">
+                        </div>
                         <h2>Prius C</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','PRIUS V')">
-                        <img src="img/prius-v-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-v-front.png">
+                        </div>
                         <h2>Prius V</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','RAV-4')">
-                        <img src="img/rav4-front.png">
+                        <div class="modeldiv">
+                            <img src="img/rav4-front.png">
+                        </div>
                         <h2>Rav-4</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','SEQUOIA')">
-                        <img src="img/sequoia-front.png">
+                        <div class="modeldiv">
+                            <img src="img/sequoia-front.png">
+                        </div>
                         <h2>Sequoia</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','SIENNA')">
-                        <img src="img/sienna-front.png">
+                        <div class="modeldiv">
+                            <img src="img/sienna-front.png">
+                        </div>
                         <h2>Sienna</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','TACOMA 2W')">
-                        <img src="img/tacoma-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tacoma-front.png">
+                        </div>
                         <h2>Tacoma 2W</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','TACOMA 4W')">
-                        <img src="img/tacoma-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tacoma-front.png">
+                        </div>
                         <h2>Tacoma 4W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','TUNDRA 2W')">
-                        <img src="img/tundra-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tundra-front.png">
+                        </div>
                         <h2>Tundra 2W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','TUNDRA 4W')">
-                        <img src="img/tundra-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tundra-front.png">
+                        </div>
                         <h2>Tundra 4W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','VENZA')">
-                        <img src="img/venza-front.png">
+                        <div class="modeldiv">
+                            <img src="img/venza-front.png">
+                        </div>
                         <h2>Venza</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2013','YARIS')">
-                        <img src="img/yaris-front.png">
+                        <div class="modeldiv">
+                            <img src="img/yaris-front.png">
+                        </div>
                         <h2>Yaris</h2>
                     </a>
                 </li>
@@ -346,131 +420,169 @@
         </div><!-- /header -->
 
         <div data-role="content" data-theme="a">
-            <div style="text-align:center"><img src="css/themes/images/toyota-logo.png" /></div>
 
             <h2>2012</h2>
-            <ul data-role="listview" data-inset="true">
+
+            <ul data-role="listview" data-inset="true" id="modellist">
                 <li>
                     <a href="#" onclick="getdata('2012','4-RUNNER')">
-                        <img src="img/4runner-front.png">
+                        <div class="modeldiv">
+                            <img src="img/4runner-front.png">
+                        </div>
                         <h2>4-Runner</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','AVALON')">
-                        <img src="img/avalon-front.png">
+                        <div class="modeldiv">
+                            <img src="img/avalon-front.png">
+                        </div>
                         <h2>Avalon</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','CAMRY')">
-                        <img src="img/camry-front.png">
+                        <div class="modeldiv">
+                            <img src="img/camry-front.png">
+                        </div>
                         <h2>Camry</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','COROLLA')">
-                        <img src="img/corolla-front.png">
+                        <div class="modeldiv">
+                            <img src="img/corolla-front.png">
+                        </div>
                         <h2>Corolla</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','FJ CRUISER')">
-                        <img src="img/fj-cruiser-front.png">
+                        <div class="modeldiv">
+                            <img src="img/fj-cruiser-front.png">
+                        </div>
                         <h2>FJ Cruiser</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','HIGHLANDER')">
-                        <img src="img/highlander-front.png">
+                        <div class="modeldiv">
+                            <img src="img/highlander-front.png">
+                        </div>
                         <h2>Highlander</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','LAND CRUISER')">
-                        <img src="img/landcruiser-front.png">
+                        <div class="modeldiv">
+                            <img src="img/landcruiser-front.png">
+                        </div>
                         <h2>Land Cruiser</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','PRIUS')">
-                        <img src="img/prius-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-front.png">
+                        </div>
                         <h2>Prius</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','PRIUS C')">
-                        <img src="img/prius-c-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-c-front.png">
+                        </div>
                         <h2>Prius C</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','PRIUS V')">
-                        <img src="img/prius-v-front.png">
+                        <div class="modeldiv">
+                            <img src="img/prius-v-front.png">
+                        </div>
                         <h2>Prius V</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','RAV-4')">
-                        <img src="img/rav4-front.png">
+                        <div class="modeldiv">
+                            <img src="img/rav4-front.png">
+                        </div>
                         <h2>Rav-4</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','SEQUOIA')">
-                        <img src="img/sequoia-front.png">
+                        <div class="modeldiv">
+                            <img src="img/sequoia-front.png">
+                        </div>
                         <h2>Sequoia</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','SIENNA')">
-                        <img src="img/sienna-front.png">
+                        <div class="modeldiv">
+                            <img src="img/sienna-front.png">
+                        </div>
                         <h2>Sienna</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','TACOMA 2W')">
-                        <img src="img/tacoma-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tacoma-front.png">
+                        </div>
                         <h2>Tacoma 2W</h2>
                     </a>
 
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','TACOMA 4W')">
-                        <img src="img/tacoma-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tacoma-front.png">
+                        </div>
                         <h2>Tacoma 4W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','TUNDRA 2W')">
-                        <img src="img/tundra-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tundra-front.png">
+                        </div>
                         <h2>Tundra 2W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','TUNDRA 4W')">
-                        <img src="img/tundra-front.png">
+                        <div class="modeldiv">
+                            <img src="img/tundra-front.png">
+                        </div>
                         <h2>Tundra 4W</h2>
 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','VENZA')">
-                        <img src="img/venza-front.png">
+                        <div class="modeldiv">
+                            <img src="img/venza-front.png">
+                        </div>
                         <h2>Venza</h2>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="getdata('2012','YARIS')">
-                        <img src="img/yaris-front.png">
+                        <div class="modeldiv">
+                            <img src="img/yaris-front.png">
+                        </div>
                         <h2>Yaris</h2>
                     </a>
                 </li>
